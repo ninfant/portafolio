@@ -1,0 +1,291 @@
+:root {
+  --accent: #4a90e2;
+  --bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --skill-bg: #ececec;
+  --dark-bg: #2c3e50;
+  --radius: 8px;
+  --spacing: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing);
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.nav-links a {
+  margin-left: var(--spacing);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.nav-links a:first-child {
+  margin-left: 0;
+}
+
+/* SECTIONS */
+.container {
+  width: min(90%, 800px);
+  margin-inline: auto;
+}
+.section {
+  padding: calc(var(--spacing) * 3) 0;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem; /* tamaño acorde */
+  margin-bottom: 1.5rem; /* espacio bajo el título */
+  color: var(--dark-bg); /* o el color que prefieras */
+  position: relative;
+  font-weight: 600;
+}
+
+/* Línea decorativa bajo el título */
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px; /* longitud de la línea */
+  height: 4px; /* grosor */
+  background: var(--accent); /* color accent desde :root */
+  margin: 0.5rem auto 0; /* separa y centra */
+  border-radius: 2px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--accent), #2c3e50);
+  color: white;
+  text-align: center;
+  padding: calc(var(--spacing) * 4) 0;
+}
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing);
+}
+.profile-pic {
+  width: 80px;
+  height: 115px;
+  border-radius: 30%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.hero-text p {
+  font-size: 1.125rem;
+  /* margin-bottom: var(--spacing); */
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: var(--accent);
+  border-radius: var(--radius);
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* SKILLS */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.skill {
+  background: var(--skill-bg);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing);
+}
+.card {
+  background: var(--card-bg);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+/* CONTACT FORM */
+/* Contact section form */
+#contact form {
+  display: grid;
+  gap: var(--spacing);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: var(--dark-bg);
+}
+
+#contact form label input,
+#contact form label textarea {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+#contact form label input:focus,
+#contact form label textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#contact form button {
+  margin-top: var(--spacing);
+  padding: 0.75rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#contact form button:hover {
+  background: #337ab7; /* un poco más oscuro que --accent */
+  transform: translateY(-2px);
+}
+
+/* SOCIAL SECTION */
+.social-section {
+  background: var(--dark-bg);
+  color: white;
+}
+.social-section h2 {
+  margin-bottom: var(--spacing);
+}
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+.social-links a {
+  color: white;
+  transition: color 0.2s ease;
+}
+.social-links a:hover {
+  color: var(--accent);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: var(--spacing);
+  background: var(--dark-bg);
+  color: white;
+  font-size: 0.875rem;
+}
+
+/* ================================
+   Formato para párrafos generales
+   ================================ */
+.section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* ================================
+   Párrafos dentro de las tarjetas
+   ================================ */
+.card p {
+  margin: 0.75rem 0 1.25rem;
+}
+
+/* ================================
+   Estilo global para enlaces
+   ================================ */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* Subraya al pasar el ratón */
+a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   Botones para enlaces dentro de .card
+   ===================================== */
+.card a {
+  display: inline-block;
+  margin-right: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.card a:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
