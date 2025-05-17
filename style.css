@@ -289,3 +289,16 @@ a:hover {
   color: white;
   transform: translateY(-2px);
 }
+
+/* Me asegura que la navbar siempre esté por encima */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* un valor alto para que no queden elementos por encima */
+}
+
+/* Compensa la altura de la navbar al hacer scroll a un ancla */
+.section {
+  /* para ajustar este valor al alto real del navbar (ej. 60px, 80px...) */
+  scroll-margin-top: 80px;
+}
